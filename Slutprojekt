@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<form>
+  <label for="name">Namn:</label><br>
+  <input type="text" id="namn" name="namn"><br>
+
+  <label for="bankkonto">Bankkonto:</label><br>
+  <input type="text" id="bankkonto" name="bankkonto"><br>
+
+  <label for="saldo">Saldo:</label><br>
+  <input type="text" id="saldo" name="saldo"><br>
+
+  <label for="bild">Ladda upp bild:</label><br>
+  <input type="file" id="bild" name="bild" accept="image/*" required><br><br>
+
+  <button type="submit">Spara</button>
+
+</form>
+
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "user_bank";
+
+// Skapa connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Checka connection och skapa databas
+/*
+$sql = "CREATE DATABASE user_bank"; 
+if ($conn->query($sql) === TRUE) {
+  echo "Database created successfully";
+} else {
+  echo "Error creating database: " . $conn->error;
+}
+*/
+/*
+
+//table
+$sql = "CREATE TABLE MyGuests (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  namn VARCHAR(30) NOT NULL, 
+  bankkonto VARCHAR(30) NOT NULL,
+  saldo VARCHAR(50),
+  img VARCHAR(50),
+  reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  )";
+  
+  if ($conn->query($sql) === TRUE) {
+    echo "Table MyGuests created successfully";
+  } else {
+    echo "Error creating table: " . $conn->error;
+  
+  }
+*/
+
+//insert data
+// $sql = "INSERT INTO MyGuests (namn, bankkonto, saldo) VALUES ('$namn', '$bankkonto', '$saldo')";
+
+
+//   if ($conn->query($sql) === TRUE) {
+//     echo "New record created successfully";
+//   } else {
+//     echo "Error: " . $sql . "<br>" . $conn->error;
+//   }
+
+  
+$conn->close();
+
+
+
+?>
+
+
+</body>
+</html>
